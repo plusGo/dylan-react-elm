@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 import 'lib-flexible';
 
 function App() {
+
     return (
         <div className="App">
             <header className="App-header">
@@ -25,3 +27,11 @@ function App() {
 }
 
 export default App;
+// 为给定 ID 的 user 创建请求
+axios.get('/api/v1/user?user_id=null')
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
